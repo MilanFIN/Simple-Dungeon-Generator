@@ -99,13 +99,12 @@ class mapCreator:
         return self.kartta
 
 
-mapcreator = mapCreator()
 
-#creating examplemap, with parameters: (map width, map height, min. roomsize, max roomsize.)
-mapcreator.mapMaker(70, 50, 4, 8)
-mapcreator.printMap()
-testi = mapcreator.getMap()
-#printing the example map
+
+#creating example map with parameters: (map width, map height, min. roomsize, max roomsize.)
+#mapcreator = mapCreator()
+#mapcreator.mapMaker(70, 50, 4, 8)
+
 
 
 
