@@ -10,8 +10,12 @@ class mapCreator:
         self.ySijainti = 0
         self.xKoko = 0
         self.yKoko = 0
-
+        self.mapSizeX = 0
+        self.mapSizeY = 0
     def mapMaker(self, xsize, ysize, RoomMin, RoomMax):
+        #asetetaan kartan koko
+        self.mapSizeX = xsize
+        self.mapSizeY = ysize
         #luodaan 2d taulukko, joka täynnä # merkkejä
         self.kartta= [["#" for x in range(xsize)] for y in range(ysize)]
         #arvotaan ensimmäisen huoneen koko
@@ -21,7 +25,7 @@ class mapCreator:
         self.xSijainti = random.randint(0, xsize -self.xKoko)
         self.ySijainti = random.randint(0, ysize -self.yKoko)
         #seuraava kutsuu huoneenluojafunktion!
-        mapcreator.makeRoom(self.xSijainti, self.ySijainti, self.xKoko, self.yKoko)
+        self.makeRoom(self.xSijainti, self.ySijainti, self.xKoko, self.yKoko)
         #seuraava luo 1. numeron ekaan huoneeseen
         for y in range(1 ):
             for x in range(1):
@@ -97,15 +101,21 @@ class mapCreator:
             print ("")
     def getMap(self):
         return self.kartta
-
-
-
+    def save(self, polku = "map.txt"):
+        text_file = open(polku, "w")
+        kirjoitettava = ""
+        for y in range(self.mapSizeY ):
+            for x in range(self.mapSizeX ):
+                kirjoitettava += self.kartta[y][x]
+            kirjoitettava += "\n"
+        text_file.write(kirjoitettava)
+        text_file.close()
 
 #creating example map with parameters: (map width, map height, min. roomsize, max roomsize.)
 #mapcreator = mapCreator()
 #mapcreator.mapMaker(70, 50, 4, 8)
-
-
+#mapcreator.printMap()
+#mapcreator.save()
 
 
 

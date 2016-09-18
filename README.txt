@@ -10,3 +10,5 @@ object.mapMaker(100, 100, 5, 10) #creates the map, has to be called after initia
 #k = max room size (biggest allowed)
 object.printMap() #prints the map
 object.getMap() #returns the map in a 2d array
+object.save("mapname.txt") #saves the genenerated map to a txt file with the specified name
+# if no parameter is given the file will be named "map.txt"
