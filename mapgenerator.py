@@ -63,9 +63,9 @@ class mapCreator:
                 oviX = uusiSijaintiX - 1  #oven sijainti
                 oviY = uusiSijaintiY  +2
 
-            if (mapcreator.enoughRoom(uusiSijaintiX, uusiSijaintiY, uusiKokoX, uusiKokoY, xsize, ysize)) == True: #testaa voidaanko piirtää huone
-                mapcreator.makeRoom(uusiSijaintiX, uusiSijaintiY, uusiKokoX, uusiKokoY) #luo huone
-                mapcreator.makeRoom(oviX, oviY, 1, 1) #luo oven
+            if (self.enoughRoom(uusiSijaintiX, uusiSijaintiY, uusiKokoX, uusiKokoY, xsize, ysize)) == True: #testaa voidaanko piirtää huone
+                self.makeRoom(uusiSijaintiX, uusiSijaintiY, uusiKokoX, uusiKokoY) #luo huone
+                self.makeRoom(oviX, oviY, 1, 1) #luo oven
                 self.xSijainti = uusiSijaintiX
                 self.ySijainti = uusiSijaintiY
                 self.xKoko = uusiKokoX
